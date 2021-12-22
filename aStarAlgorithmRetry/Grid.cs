@@ -13,12 +13,23 @@ namespace aStarAlgorithmRetry
         private int distanceTravelled { get; set; }
 
         // For keeping track of which nodes to consider when choosing the next node
-        private List<Tuple<int, Tuple<int, int>>> nodesToConsider { get; set; }
+        public List<Tuple<int, Tuple<int, int>>> nodesToConsider { get; set; }
 
         public Grid(Node startNode, Node endNode) {
             this.startNode = startNode;
             this.endNode = endNode;
             currentNode = startNode;
+
+            grid = new List<List<Node>>
+            {
+                new List<Node>{new Node(new Tuple<int, int>(0, 0), Node.Type.Regular), new Node(new Tuple<int, int>(0, 1), Node.Type.Regular), new Node(new Tuple<int, int>(0, 2), Node.Type.Regular), new Node(new Tuple<int, int>(0, 3), Node.Type.Regular)},
+                new List<Node>{new Node(new Tuple<int, int>(1, 0), Node.Type.Regular), new Node(new Tuple<int, int>(1, 1), Node.Type.Regular), new Node(new Tuple<int, int>(1, 2), Node.Type.Regular), new Node(new Tuple<int, int>(1, 3), Node.Type.Regular)},
+                new List<Node>{new Node(new Tuple<int, int>(2, 0), Node.Type.Regular), new Node(new Tuple<int, int>(2, 1), Node.Type.Regular), new Node(new Tuple<int, int>(2, 2), Node.Type.Regular), new Node(new Tuple<int, int>(2, 3), Node.Type.Regular)},
+                new List<Node>{new Node(new Tuple<int, int>(3, 0), Node.Type.Regular), new Node(new Tuple<int, int>(3, 1), Node.Type.Regular), new Node(new Tuple<int, int>(3, 2), Node.Type.Regular), new Node(new Tuple<int, int>(3, 3), Node.Type.Regular)},
+            };
+
+            nodesToConsider = new List<Tuple<int, Tuple<int, int>>>();
+
         }
         
         public static Grid findTouchingNodes(Grid grid) {
@@ -44,7 +55,8 @@ namespace aStarAlgorithmRetry
             }
             
             // Checks if the current node is touching the node to the right and that it isn't an obstacle
-            if (grid.currentNode.coords.Item2 < grid.grid[0].Count) {
+            if (grid.currentNode.coords.Item2 < grid.grid[0].Count-1) {
+                
                 // Makes sure the above node isn't an obstacle
                 if (grid.grid[grid.currentNode.coords.Item1][grid.currentNode.coords.Item2 + 1].type != Node.Type.Obstacle) {
 
@@ -63,7 +75,7 @@ namespace aStarAlgorithmRetry
             }
             
             // Checks if the current node is touching the below node and that it isn't an obstacle
-            if (grid.currentNode.coords.Item1 < grid.grid.Count) {
+            if (grid.currentNode.coords.Item1 < grid.grid.Count-1) {
                 // Makes sure the above node isn't an obstacle
                 if (grid.grid[grid.currentNode.coords.Item1 + 1][grid.currentNode.coords.Item2].type != Node.Type.Obstacle) {
 
@@ -104,9 +116,9 @@ namespace aStarAlgorithmRetry
 
         }
         
-        public static Node findCostsOfNode(Node node) {}
+        //public static Node findCostsOfNode(Node node) {}
         
-        public static Grid moveToBestSpace(Grid grid) {}
+        //public static Grid moveToBestSpace(Grid grid) {}
         
     }
 

@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aStarAlgorithmRetry", "aStarAlgorithmRetry\aStarAlgorithmRetry.csproj", "{0143D7A0-508B-4131-974D-8DA6A79B3363}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{7B0D6AE2-8CA7-4FC0-9B3D-B9D4498C39C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{0143D7A0-508B-4131-974D-8DA6A79B3363}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0143D7A0-508B-4131-974D-8DA6A79B3363}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0143D7A0-508B-4131-974D-8DA6A79B3363}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B0D6AE2-8CA7-4FC0-9B3D-B9D4498C39C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B0D6AE2-8CA7-4FC0-9B3D-B9D4498C39C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B0D6AE2-8CA7-4FC0-9B3D-B9D4498C39C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B0D6AE2-8CA7-4FC0-9B3D-B9D4498C39C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

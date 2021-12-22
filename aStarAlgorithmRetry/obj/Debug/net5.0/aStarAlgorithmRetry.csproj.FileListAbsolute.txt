@@ -1,0 +1,16 @@
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/obj/Debug/net5.0/aStarAlgorithmRetry.csproj.AssemblyReference.cache
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/obj/Debug/net5.0/aStarAlgorithmRetry.GeneratedMSBuildEditorConfig.editorconfig
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/obj/Debug/net5.0/aStarAlgorithmRetry.AssemblyInfoInputs.cache
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/obj/Debug/net5.0/aStarAlgorithmRetry.AssemblyInfo.cs
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/obj/Debug/net5.0/aStarAlgorithmRetry.csproj.CoreCompileInputs.cache
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/bin/Debug/net5.0/aStarAlgorithmRetry
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/bin/Debug/net5.0/aStarAlgorithmRetry.deps.json
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/bin/Debug/net5.0/aStarAlgorithmRetry.runtimeconfig.json
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/bin/Debug/net5.0/aStarAlgorithmRetry.runtimeconfig.dev.json
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/bin/Debug/net5.0/aStarAlgorithmRetry.dll
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/bin/Debug/net5.0/ref/aStarAlgorithmRetry.dll
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/bin/Debug/net5.0/aStarAlgorithmRetry.pdb
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/obj/Debug/net5.0/aStarAlgorithmRetry.dll
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/obj/Debug/net5.0/ref/aStarAlgorithmRetry.dll
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/obj/Debug/net5.0/aStarAlgorithmRetry.pdb
+/home/daniel/Documents/projects/cSharp/software/aStarAlgorithmRetry/aStarAlgorithmRetry/obj/Debug/net5.0/aStarAlgorithmRetry.genruntimeconfig.cache
