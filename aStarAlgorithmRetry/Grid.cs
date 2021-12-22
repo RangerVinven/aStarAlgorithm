@@ -99,6 +99,9 @@ namespace aStarAlgorithmRetry
                 }
 
             }
+
+            return grid;
+
         }
         
         public static Node findCostsOfNode(Node node) {}
