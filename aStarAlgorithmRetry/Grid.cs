@@ -23,9 +23,9 @@ namespace aStarAlgorithmRetry
             grid = new List<List<Node>>
             {
                 new List<Node>{new Node(new Tuple<int, int>(0, 0), Node.Type.Regular), new Node(new Tuple<int, int>(0, 1), Node.Type.Regular), new Node(new Tuple<int, int>(0, 2), Node.Type.Regular), new Node(new Tuple<int, int>(0, 3), Node.Type.Regular)},
-                new List<Node>{new Node(new Tuple<int, int>(1, 0), Node.Type.Regular), new Node(new Tuple<int, int>(1, 1), Node.Type.Regular), new Node(new Tuple<int, int>(1, 2), Node.Type.Regular), new Node(new Tuple<int, int>(1, 3), Node.Type.Regular)},
+                new List<Node>{new Node(new Tuple<int, int>(1, 0), Node.Type.Regular), new Node(new Tuple<int, int>(1, 1), Node.Type.StartNode), new Node(new Tuple<int, int>(1, 2), Node.Type.Regular), new Node(new Tuple<int, int>(1, 3), Node.Type.Regular)},
                 new List<Node>{new Node(new Tuple<int, int>(2, 0), Node.Type.Regular), new Node(new Tuple<int, int>(2, 1), Node.Type.Regular), new Node(new Tuple<int, int>(2, 2), Node.Type.Regular), new Node(new Tuple<int, int>(2, 3), Node.Type.Regular)},
-                new List<Node>{new Node(new Tuple<int, int>(3, 0), Node.Type.Regular), new Node(new Tuple<int, int>(3, 1), Node.Type.Regular), new Node(new Tuple<int, int>(3, 2), Node.Type.Regular), new Node(new Tuple<int, int>(3, 3), Node.Type.Regular)},
+                new List<Node>{new Node(new Tuple<int, int>(3, 0), Node.Type.Regular), new Node(new Tuple<int, int>(3, 1), Node.Type.Regular), new Node(new Tuple<int, int>(3, 2), Node.Type.Regular), new Node(new Tuple<int, int>(3, 3), Node.Type.EndNode)},
             };
 
             nodesToConsider = new List<Tuple<int, Tuple<int, int>>>();
@@ -131,6 +131,9 @@ namespace aStarAlgorithmRetry
             int lowestFcostRow = grid.nodesToConsider[posOfLowestFcost].Item2.Item1;
             int lowestFcostColumn = grid.nodesToConsider[posOfLowestFcost].Item2.Item2;
             
+            // Changes the text of the new current node to "L" to show the line
+            grid.grid[lowestFcostRow][lowestFcostColumn].text = 'L';
+            
             grid.currentNode = grid.grid[lowestFcostRow][lowestFcostColumn];
 
             return grid;
@@ -143,16 +146,7 @@ namespace aStarAlgorithmRetry
 
                 // Displays each column in the row
                 foreach (var column in row) {
-                    //Console.Write(column.text);
-                    if (column.type == Node.Type.StartNode) {
-                        Console.Write("S");
-                    } else if (column.type == Node.Type.EndNode) {
-                        Console.Write("E");
-                    } else if (column.type == Node.Type.Obstacle) {
-                        Console.Write("X");
-                    } else {
-                        Console.Write(" ");
-                    }
+                    Console.Write(column.text);
                 }
                 Console.WriteLine("| ");
             }
