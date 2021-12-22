@@ -14,7 +14,7 @@ namespace GridTests
             // Arrange
             Node startNode = new Node(new Tuple<int, int>(1, 1), Node.Type.StartNode);
             Node endNode = new Node(new Tuple<int, int>(3, 3), Node.Type.EndNode);
-            Grid grid = new Grid(startNode, endNode);
+            Grid grid = new Grid(startNode, endNode, new Tuple<int, int>(4, 4));
 
             List<Tuple<int, Tuple<int, int>>> expectedOutput = new List<Tuple<int, Tuple<int, int>>>
                 {new(6, new Tuple<int, int>(0, 1)), new(4, new Tuple<int, int>(1, 2)), new(4, new Tuple<int, int>(2, 1)), new(6, new Tuple<int, int>(1, 0))};
@@ -42,7 +42,7 @@ namespace GridTests
             // Arrange
             Node startNode = new Node(new Tuple<int, int>(0, 1), Node.Type.StartNode);
             Node endNode = new Node(new Tuple<int, int>(3, 3), Node.Type.EndNode);
-            Grid grid = new Grid(startNode, endNode);
+            Grid grid = new Grid(startNode, endNode, new Tuple<int, int>(4, 4));
 
             List<Tuple<int, Tuple<int, int>>> expectedOutput = new List<Tuple<int, Tuple<int, int>>>
                 {new(5, new Tuple<int, int>(0, 2)), new(5, new Tuple<int, int>(1, 1)), new(7, new Tuple<int, int>(0, 0))};
@@ -71,7 +71,7 @@ namespace GridTests
             // Arrange
             Node startNode = new Node(new Tuple<int, int>(1, 3), Node.Type.StartNode);
             Node endNode = new Node(new Tuple<int, int>(3, 3), Node.Type.EndNode);
-            Grid grid = new Grid(startNode, endNode);
+            Grid grid = new Grid(startNode, endNode, new Tuple<int, int>(4, 4));
 
             List<Tuple<int, Tuple<int, int>>> expectedOutput = new List<Tuple<int, Tuple<int, int>>>
                 {new(4, new Tuple<int, int>(0, 3)), new(2, new Tuple<int, int>(2, 3)), new(4, new Tuple<int, int>(1, 2))};
@@ -100,7 +100,7 @@ namespace GridTests
             // Arrange
             Node startNode = new Node(new Tuple<int, int>(1, 0), Node.Type.StartNode);
             Node endNode = new Node(new Tuple<int, int>(3, 3), Node.Type.EndNode);
-            Grid grid = new Grid(startNode, endNode);
+            Grid grid = new Grid(startNode, endNode, new Tuple<int, int>(4, 4));
 
             List<Tuple<int, Tuple<int, int>>> expectedOutput = new List<Tuple<int, Tuple<int, int>>>
                 {new(7, new Tuple<int, int>(0, 0)), new(5, new Tuple<int, int>(1, 1)), new(5, new Tuple<int, int>(2, 0))};

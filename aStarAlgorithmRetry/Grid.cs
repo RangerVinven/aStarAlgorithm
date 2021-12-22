@@ -15,18 +15,29 @@ namespace aStarAlgorithmRetry
         // For keeping track of which nodes to consider when choosing the next node
         public List<Tuple<int, Tuple<int, int>>> nodesToConsider { get; set; }
 
-        public Grid(Node startNode, Node endNode) {
+        public Grid(Node startNode, Node endNode, Tuple<int, int> gridDimensions) {
             this.startNode = startNode;
             this.endNode = endNode;
             currentNode = startNode;
 
-            grid = new List<List<Node>>
-            {
-                new List<Node>{new Node(new Tuple<int, int>(0, 0), Node.Type.Regular), new Node(new Tuple<int, int>(0, 1), Node.Type.Regular), new Node(new Tuple<int, int>(0, 2), Node.Type.Regular), new Node(new Tuple<int, int>(0, 3), Node.Type.Regular)},
-                new List<Node>{new Node(new Tuple<int, int>(1, 0), Node.Type.Regular), new Node(new Tuple<int, int>(1, 1), Node.Type.StartNode), new Node(new Tuple<int, int>(1, 2), Node.Type.Regular), new Node(new Tuple<int, int>(1, 3), Node.Type.Regular)},
-                new List<Node>{new Node(new Tuple<int, int>(2, 0), Node.Type.Regular), new Node(new Tuple<int, int>(2, 1), Node.Type.Regular), new Node(new Tuple<int, int>(2, 2), Node.Type.Regular), new Node(new Tuple<int, int>(2, 3), Node.Type.Regular)},
-                new List<Node>{new Node(new Tuple<int, int>(3, 0), Node.Type.Regular), new Node(new Tuple<int, int>(3, 1), Node.Type.Regular), new Node(new Tuple<int, int>(3, 2), Node.Type.Regular), new Node(new Tuple<int, int>(3, 3), Node.Type.EndNode)},
-            };
+            // Creates the grid
+            grid = new List<List<Node>>();
+            for (int row = 0; row < gridDimensions.Item2; row++) {
+                grid.Add(new List<Node>());
+
+                for (int column = 0; column < gridDimensions.Item2; column++) {
+                    // Checks if the current node is an start node, end node, or neither, then adds the appropriate node
+                    if (row == startNode.coords.Item1 && column == startNode.coords.Item2) {
+                        grid[row].Add(startNode);
+                    } else if (row == endNode.coords.Item1 && column == endNode.coords.Item2) {
+                        grid[row].Add(endNode);
+                    }
+                    else {
+                        grid[row].Add(new Node(new Tuple<int, int>(row, column), Node.Type.Regular));
+                    }
+                }
+                
+            }
 
             nodesToConsider = new List<Tuple<int, Tuple<int, int>>>();
 

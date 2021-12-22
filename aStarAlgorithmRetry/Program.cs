@@ -6,9 +6,9 @@ namespace aStarAlgorithmRetry
     {
         static void Main(string[] args)
         {
-            Node startNode = new Node(new Tuple<int, int>(1, 1), Node.Type.StartNode);
-            Node endNode = new Node(new Tuple<int, int>(3, 3), Node.Type.EndNode);
-            Grid grid = new Grid(startNode, endNode);
+            Node startNode = new Node(new Tuple<int, int>(0, 9), Node.Type.StartNode);
+            Node endNode = new Node(new Tuple<int, int>(9, 0), Node.Type.EndNode);
+            Grid grid = new Grid(startNode, endNode, new Tuple<int, int>(10, 10));
 
             grid.displayGrid(grid);
             Console.WriteLine("--------------------");
