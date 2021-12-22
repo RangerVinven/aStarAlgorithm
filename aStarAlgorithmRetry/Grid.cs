@@ -7,9 +7,9 @@ namespace aStarAlgorithmRetry
 {
     public class Grid {
         private List<List<Node>> grid;
-        private Node currentNode { get; set; }
-        private Node startNode { get; set; }
-        private Node endNode { get; set; }
+        public Node currentNode { get; set; }
+        public Node startNode { get; set; }
+        public Node endNode { get; set; }
         private int distanceTravelled { get; set; }
 
         // For keeping track of which nodes to consider when choosing the next node
@@ -32,7 +32,7 @@ namespace aStarAlgorithmRetry
 
         }
         
-        public static Grid findTouchingNodes(Grid grid) {
+        public Grid findTouchingNodes(Grid grid) {
             Node touchingNode;
             
             // Checks if the current node is touching the above node (or if it's at the top) and that it isn't an obstacle
@@ -115,10 +115,49 @@ namespace aStarAlgorithmRetry
             return grid;
 
         }
-        
-        //public static Node findCostsOfNode(Node node) {}
-        
-        //public static Grid moveToBestSpace(Grid grid) {}
+
+        public Grid moveToBestSpace(Grid grid) {
+            // Sets the position of the lowest f score
+            int posOfLowestFcost = 0;
+            
+            // Loops through the nodesToConsider variable and finds the position of the lowest f score
+            for (int i = 0; i < grid.nodesToConsider.Count-1; i++) {
+                if (grid.nodesToConsider[i].Item1 < grid.nodesToConsider[posOfLowestFcost].Item1) {
+                    posOfLowestFcost = i;
+                }
+            }
+
+            // Gets the row and column coordinate of the touching node with the lowest f score
+            int lowestFcostRow = grid.nodesToConsider[posOfLowestFcost].Item2.Item1;
+            int lowestFcostColumn = grid.nodesToConsider[posOfLowestFcost].Item2.Item2;
+            
+            grid.currentNode = grid.grid[lowestFcostRow][lowestFcostColumn];
+
+            return grid;
+        }
+
+        public void displayGrid(Grid grid) {
+            // Loops through each row
+            foreach (var row in grid.grid) {
+                Console.Write("|");
+
+                // Displays each column in the row
+                foreach (var column in row) {
+                    //Console.Write(column.text);
+                    if (column.type == Node.Type.StartNode) {
+                        Console.Write("S");
+                    } else if (column.type == Node.Type.EndNode) {
+                        Console.Write("E");
+                    } else if (column.type == Node.Type.Obstacle) {
+                        Console.Write("X");
+                    } else {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine("| ");
+            }
+        }
+
         
     }
 

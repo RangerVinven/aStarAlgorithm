@@ -20,7 +20,7 @@ namespace GridTests
                 {new(6, new Tuple<int, int>(0, 1)), new(4, new Tuple<int, int>(1, 2)), new(4, new Tuple<int, int>(2, 1)), new(6, new Tuple<int, int>(1, 0))};
 
             // Act
-            grid = Grid.findTouchingNodes(grid);
+            grid = grid.findTouchingNodes(grid);
 
             // Assert
             bool areSameValues = true;
@@ -48,7 +48,7 @@ namespace GridTests
                 {new(5, new Tuple<int, int>(0, 2)), new(5, new Tuple<int, int>(1, 1)), new(7, new Tuple<int, int>(0, 0))};
 
             // Act
-            grid = Grid.findTouchingNodes(grid);
+            grid = grid.findTouchingNodes(grid);
 
             // Assert
             bool areSameValues = true;
@@ -77,7 +77,7 @@ namespace GridTests
                 {new(4, new Tuple<int, int>(0, 3)), new(2, new Tuple<int, int>(2, 3)), new(4, new Tuple<int, int>(1, 2))};
 
             // Act
-            grid = Grid.findTouchingNodes(grid);
+            grid = grid.findTouchingNodes(grid);
 
             // Assert
             bool areSameValues = true;
@@ -106,7 +106,7 @@ namespace GridTests
                 {new(7, new Tuple<int, int>(0, 0)), new(5, new Tuple<int, int>(1, 1)), new(5, new Tuple<int, int>(2, 0))};
 
             // Act
-            grid = Grid.findTouchingNodes(grid);
+            grid = grid.findTouchingNodes(grid);
 
             // Assert
             bool areSameValues = true;

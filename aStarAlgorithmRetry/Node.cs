@@ -17,10 +17,21 @@ namespace aStarAlgorithmRetry
         public Tuple<int, int> coords;
         public Type type;
         public List<Tuple<int, int>> touchingNodesCoords;
+        public char text;
 
         public Node(Tuple<int, int> nodeCoords, Type nodeType) {
             coords = nodeCoords;
             type = nodeType;
+
+            if (nodeType == Type.EndNode) {
+                text = 'E';
+            } else if (nodeType == Type.StartNode) {
+                text = 'S';
+            } else if (nodeType == Type.Obstacle) {
+                text = 'X';
+            } else {
+                text = ' ';
+            }
 
             hCost = null;
             gCost = null;
