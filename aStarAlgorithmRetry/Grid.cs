@@ -136,7 +136,7 @@ namespace aStarAlgorithmRetry
             int posOfLowestFcost = 0;
             
             // Loops through the nodesToConsider variable and finds the position of the lowest f score
-            for (int i = 0; i <= grid.nodesToConsider.Count-1; i++) {
+            for (int i = 0; i < grid.nodesToConsider.Count-1; i++) {
                 if (grid.nodesToConsider[i].Item1 < grid.nodesToConsider[posOfLowestFcost].Item1 && grid.grid[grid.nodesToConsider[i].Item2.Item1][grid.nodesToConsider[i].Item2.Item2].visited == false) {
                     posOfLowestFcost = i;
                 }

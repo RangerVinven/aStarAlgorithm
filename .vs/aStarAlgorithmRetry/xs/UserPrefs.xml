@@ -1,0 +1,29 @@
+﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{0143D7A0-508B-4131-974D-8DA6A79B3363}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="aStarAlgorithmRetry/Program.cs">
+    <Files>
+      <File FileName="aStarAlgorithmRetry/Program.cs" Line="26" Column="46" />
+      <File FileName="aStarAlgorithmRetry/Grid.cs" Line="140" Column="17" />
+      <File FileName="UnitTests/GridTests.cs" />
+      <File FileName="aStarAlgorithmRetry/Node.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="aStarAlgorithmRetry" expanded="True">
+            <Node name="aStarAlgorithmRetry" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+            <Node name="UnitTests" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.aStarAlgorithmRetry PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
