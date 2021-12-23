@@ -15,13 +15,14 @@ namespace aStarAlgorithmRetry
         // For keeping track of which nodes to consider when choosing the next node
         public List<Tuple<int, Tuple<int, int>>> nodesToConsider { get; set; }
 
-        public Grid(Node startNode, Node endNode, Tuple<int, int> gridDimensions) {
+        public Grid(Node startNode, Node endNode, List<Node> obstacles, Tuple<int, int> gridDimensions) {
             this.startNode = startNode;
             this.endNode = endNode;
             currentNode = startNode;
+            nodesToConsider = new List<Tuple<int, Tuple<int, int>>>();
 
-            // Creates the grid
-            grid = new List<List<Node>>();
+        // Creates the grid
+        grid = new List<List<Node>>();
             for (int row = 0; row < gridDimensions.Item2; row++) {
                 grid.Add(new List<Node>());
 
@@ -39,7 +40,10 @@ namespace aStarAlgorithmRetry
                 
             }
 
-            nodesToConsider = new List<Tuple<int, Tuple<int, int>>>();
+            // Loops through the obstacles list and changes the nodes to obstacles when they are ones
+            for (int i = 0; i < obstacles.Count; i++) {
+                grid[obstacles[i].coords.Item1][obstacles[i].coords.Item2] = obstacles[i];
+            }
 
         }
         
@@ -132,8 +136,8 @@ namespace aStarAlgorithmRetry
             int posOfLowestFcost = 0;
             
             // Loops through the nodesToConsider variable and finds the position of the lowest f score
-            for (int i = 0; i < grid.nodesToConsider.Count-1; i++) {
-                if (grid.nodesToConsider[i].Item1 < grid.nodesToConsider[posOfLowestFcost].Item1) {
+            for (int i = 0; i <= grid.nodesToConsider.Count-1; i++) {
+                if (grid.nodesToConsider[i].Item1 < grid.nodesToConsider[posOfLowestFcost].Item1 && grid.grid[grid.nodesToConsider[i].Item2.Item1][grid.nodesToConsider[i].Item2.Item2].visited == false) {
                     posOfLowestFcost = i;
                 }
             }
@@ -144,8 +148,16 @@ namespace aStarAlgorithmRetry
             
             // Changes the text of the new current node to "L" to show the line
             grid.grid[lowestFcostRow][lowestFcostColumn].text = 'L';
-            
+
+            //Console.WriteLine("Current Node - {0} {1}", grid.currentNode.coords.Item1, grid.currentNode.coords.Item2);
+
+            int oldRow = grid.currentNode.coords.Item1;
+            int oldColumn = grid.currentNode.coords.Item2;
+
             grid.currentNode = grid.grid[lowestFcostRow][lowestFcostColumn];
+            grid.grid[oldRow][oldColumn].visited = true;
+
+            //Console.WriteLine("New Node - {0} {1}", lowestFcostRow, lowestFcostColumn);
 
             return grid;
         }
